@@ -15,8 +15,8 @@ public class RockPaperScissors{
 	public static void play(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Type r, p, or s");
-		String hand = sc.next();
-		while (!(hand.equals("r")) && !(hand.equals("p")) && !(hand.equals("s"))){
+		String hand = sc.next(); // user's choice
+		while (!(hand.equals("r")) && !(hand.equals("p")) && !(hand.equals("s"))){ // check if valid input
 			System.out.println("Invalid input. Type r, p, or s.");
 			hand = sc.next();
 		}
@@ -25,8 +25,8 @@ public class RockPaperScissors{
 		computer[1] = "p";
 		computer[2] = "s";
 		Random rand = new Random();
-		int random_integer = rand.nextInt(3);
-		String computerPlay = computer[random_integer];
+		int random_integer = rand.nextInt(3); 
+		String computerPlay = computer[random_integer]; // computer choice
 		System.out.println("Computer chooses " + computerPlay);
 		check(hand, computerPlay);
 		System.out.println("Your W-L-T is " + wins + "-" + losses + "-" + ties);
@@ -36,7 +36,7 @@ public class RockPaperScissors{
 			System.out.println("Invalid input. Type y or n.");
 			restart = sc.next();
 		}
-		while(restart.equals("y")){
+		while(restart.equals("y")){ // play again until user types n
 			play();
 		}
 	}
